@@ -6,7 +6,7 @@ function CartCard({ cartProduct, setCartItem }) {
   };
   return (
     <>
-      <div className="w-11/12 xl:w-4/5 flex flex-col md:flex-row items-start justify-between shadow-md shadow-violet-700/50 p-7 gap-5 ring-1 ring-violet-700 rounded-sm">
+      <div className="w-11/12 xl:w-4/5 flex flex-col md:flex-row items-start justify-between shadow-md shadow-violet-700/50 p-7 gap-5 ring-1 bg-slate-50 ring-violet-700 rounded-sm">
         <div className="w-full md:w-4/5 flex flex-col items-center justify-center sm:flex-row sm:items-start sm:justify-start md:justify-start gap-5 md:gap-7 lg:gap-10">
           <div className="size-36 md:size-40 lg:size-60">
             <img

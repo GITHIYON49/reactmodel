@@ -1,33 +1,30 @@
 import { useState } from "react";
 import { Header, Footer } from "./components";
 import { Home, Cart } from "./pages";
-import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 function App() {
   const [produts, setProucts] = useState([]);
   const [cartItem, setCartItem] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Header cartItem={cartItem} />
+      <Header cartItem={cartItem} setIsOpen={setIsOpen} />
       <main className="w-full flex flex-col items-center justify-center">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                produts={produts}
-                setProucts={setProucts}
-                setCartItem={setCartItem}
-                cartItem={cartItem}
-              />
-            }
+        <Home
+          produts={produts}
+          setProucts={setProucts}
+          setCartItem={setCartItem}
+          cartItem={cartItem}
+        />
+        {isOpen ? (
+          <Cart
+            cartItem={cartItem}
+            setCartItem={setCartItem}
+            setIsOpen={setIsOpen}
           />
-          <Route
-            path="/cart"
-            element={<Cart cartItem={cartItem} setCartItem={setCartItem} />}
-          />
-        </Routes>
+        ) : null}
+
         <ToastContainer position="bottom-right" />
       </main>
       <Footer />
